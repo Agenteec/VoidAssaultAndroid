@@ -1,0 +1,3 @@
+[submodule "app/src/main/cpp/VoidAssault"]
+	path = app/src/main/cpp/VoidAssault
+	url = https://github.com/Agenteec/VoidAssault.git
