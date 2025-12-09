@@ -35,8 +35,8 @@ android {
     }
     externalNativeBuild {
         cmake {
-            path = file("src/main/cpp/CMakeLists.txt")
-            version = "3.22.1"
+            path = file("src/main/cpp/VoidAssault/CMakeLists.txt")
+            version = "4.1.2"
         }
     }
     buildFeatures {

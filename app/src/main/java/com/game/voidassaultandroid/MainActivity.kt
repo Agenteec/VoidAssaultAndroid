@@ -61,7 +61,7 @@ class MainActivity : NativeActivity() {
 
     companion object {
         init {
-            System.loadLibrary("main")
+            System.loadLibrary("gameclient")
         }
     }
 }
