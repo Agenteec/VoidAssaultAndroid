@@ -6,11 +6,15 @@ import android.view.View
 import android.view.WindowManager
 import android.graphics.Color
 import android.os.Build
+import android.view.KeyEvent
 
 class MainActivity : NativeActivity() {
 
+    @JvmField
+    var softKeyboard: SoftKeyboard? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        softKeyboard = SoftKeyboard(this)
         setupFullscreenMode()
     }
 
@@ -18,7 +22,10 @@ class MainActivity : NativeActivity() {
         super.onResume()
         setupFullscreenMode()
     }
-
+    override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {
+        softKeyboard?.onKeyUpEvent(event)
+        return super.onKeyUp(keyCode, event)
+    }
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) {
